@@ -1,29 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
 html {
-  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.container {
-  max-width: 26rem;
-  margin-right: auto;
-  margin-left: auto;
+*,
+::after,
+::before {
+  box-sizing: inherit;
 }
 
-header {
+body {
+  margin: 0;
+  background-color: #274D6D;
+  color: white;
+  font-family: sans-serif;
+}
+h1 {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  margin: 3rem 0;
+  border-bottom: 5px dotted #547EA1;
+}
+
+/* Budoucí komponenta ShoppingList */
+.polozka {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  min-width: 200px;
+  padding: 1rem 2rem;
+  border: 2px solid #547EA1;
+  border-radius: 1.2rem;
+  margin-bottom: 0.5rem;
+  background-color: #0A2236;
+  cursor: pointer;
+  box-shadow: 5px 6px 19px 3px rgba(0, 0, 0, 0.15);
+}
+
+.polozka:hover {
+  background-color: #274D6D;
+  box-shadow: 5px 6px 19px 3px rgba(0, 0, 0, 0.431);
+}
+
+.polozka__nazev {
+  font-weight: bold;
+}
+
+/* Budoucí komponenta ShoppingItem */
+.seznam {
+  margin: 2rem auto;
+}
+
+.seznam__polozky {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
 }
 
-.logo {
-  width: 10rem;
-  height: 10rem;
-  background-image: url(./img/rocket.svg);
-  background-size: contain;
-}

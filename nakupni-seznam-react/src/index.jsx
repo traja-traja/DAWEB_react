@@ -2,19 +2,40 @@ import React from 'react';
 import { render } from 'react-dom';
 import './style.css';
 
-const App = () => (
-  <div className="container">
-    <header>
-      <div className="logo"></div>
-      <h1>Webová aplikace</h1>
-    </header>
-    <main>
-      <p>Startovací šablona pro webovou aplikaci v Reactu. Vytvořeno pomocí <a href="https://www.npmjs.com/package/create-czechitas-app">create-czechitas-app</a>.</p>
-    </main>
-    <footer>
-      <p>Czechitas, Digitální akademie: Web</p>
-    </footer>
-  </div>
-);
+const App = () => {
+  return (
+    <div>
+      <header>
+        <h1>Nákupní seznam</h1>
+      </header>
+      <main>
+      <div class="seznam">
+        <div class="seznam__polozky">
+          <div class="polozka">
+            <div class="polozka__nazev">máslo</div>
+            <div class="polozka__mnozstvi">1 ks</div>
+          </div>
+          <div class="polozka">
+            <div class="polozka__nazev">sýr</div>
+            <div class="polozka__mnozstvi">2 ks</div>
+          </div>
+          <div class="polozka">
+            <div class="polozka__nazev">banány</div>
+            <div class="polozka__mnozstvi">8 ks</div>
+          </div>
+          <div class="polozka">
+            <div class="polozka__nazev">chleba</div>
+            <div class="polozka__mnozstvi">1 ks</div>
+          </div>
+          <div class="polozka">
+            <div class="polozka__nazev">pivo</div>
+            <div class="polozka__mnozstvi">1 ks</div>
+          </div>
+        </div>
+      </div>
+      </main>
+    </div>
+  );
+};
 
 render(<App />, document.querySelector('#app'));
