@@ -35,6 +35,15 @@ const App = () => {
           </div>
         </div>
 
+        <div>
+          <h2>Přidat položku</h2>
+          <form className="formular">
+            <input placeholder="název položky" className="formular__nazev-polozky" type="text" />
+            <input placeholder="počet" className="formular__pocet-kusu" type="number" min="1" />
+            <button className="formular__tlacitko">Přidat</button>
+          </form>
+        </div>
+
       </main>
     </div>
   );
