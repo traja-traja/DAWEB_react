@@ -18,25 +18,30 @@ const ShoppingList = (props) => {
     props.onBoughtChange(id);
   };
 
+  console.log(props.skrytKoupene);
+
+  const filteredNakup = props.skrytKoupene
+    ? props.nakup.filter((polozka) => !polozka.koupeno)
+    : [...props.nakup];
+
+  let listOfShoppingItems = <p>Žádné položky</p>;
+
+  if (filteredNakup.length > 0) {
+    listOfShoppingItems = filteredNakup.map((item) => (
+      <ShoppingItem
+        key={item.nazev}
+        nazev={item.nazev}
+        mnozstvi={item.mnozstvi}
+        koupeno={item.koupeno}
+        onBoughtChange={handleBoughtChange}
+      ></ShoppingItem>
+    ));
+  }
+
   return (
     <div className="seznam">
       <div className="seznam__polozky">
-        {/* <ShoppingItem nazev="máslo" mnozstvi={1}></ShoppingItem> */}
-
-        {/* <ShoppingItem
-              nazev={props.nakup[1].nazev}
-              mnozstvi={props.nakup[1].mnozstvi}
-            ></ShoppingItem> */}
-
-        {props.nakup.map((item) => (
-          <ShoppingItem
-            key={item.nazev}
-            nazev={item.nazev}
-            mnozstvi={item.mnozstvi}
-            koupeno={item.koupeno}
-            onBoughtChange={handleBoughtChange}
-          ></ShoppingItem>
-        ))}
+        {listOfShoppingItems}
       </div>
     </div>
   );

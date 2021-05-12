@@ -6,10 +6,6 @@ const ShoppingItem = (props) => {
     props.onBoughtChange(props.nazev);
   };
 
-  if (props.skrytKoupene && koupeno) {
-    return (null);
-  }
-
   return (
     <div
       className={props.koupeno ? "polozka polozka--koupeno" : "polozka"}
