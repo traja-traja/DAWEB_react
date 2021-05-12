@@ -15,7 +15,7 @@ const App = () => {
     { nazev: "pivo", mnozstvi: 1 },
   ]);
 
-  const [skrytKoupene, setSkrytKoupene] = useState(false);
+  const [skrytKoupene, setSkrytKoupene] = useState(true); // defaultní stav true
 
   const handleFormSubmit = (data) => {
     // nakup.push(data); // nebude fungovat
@@ -32,7 +32,10 @@ const App = () => {
     <div>
       <header>
         <h1>Nákupní seznam</h1>
-        <FilterShoppingList onFilterChange={handleFilterChange} />
+        <FilterShoppingList
+          filterIsChecked={skrytKoupene}
+          onFilterChange={handleFilterChange}
+        />
       </header>
       <main>
         <ShoppingList

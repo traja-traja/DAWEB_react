@@ -11,7 +11,7 @@ const FilterShoppingList = (props) => {
     return (
         <form className="filtrovani-seznamu">
             <label>
-                <input onChange={handleInputChanged} type="checkbox" className="filtrovani-seznamu__input" />
+                <input checked={props.filterIsChecked} onChange={handleInputChanged} type="checkbox" className="filtrovani-seznamu__input" />
                 Skrýt zakoupené položky
             </label>
         </form>
