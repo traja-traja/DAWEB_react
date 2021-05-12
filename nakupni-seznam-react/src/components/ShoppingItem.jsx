@@ -5,7 +5,7 @@ const ShoppingItem = (props) => {
   const [koupeno, setKoupeno] = useState(false);
 
   const handleClick = () => {
-    setKoupeno(!koupeno);
+    setKoupeno((prevState) => !prevState);
   };
 
   return (
