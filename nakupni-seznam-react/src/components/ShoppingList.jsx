@@ -10,6 +10,7 @@ const ShoppingList = (props) => {
         { nazev: "sýr", mnozstvi: 2 }
         .......
     ]
+    props.skrytKoupene = false (true)
     */
 
   return (
@@ -27,6 +28,7 @@ const ShoppingList = (props) => {
             key={item.nazev}
             nazev={item.nazev}
             mnozstvi={item.mnozstvi}
+            skrytKoupene={props.skrytKoupene}
           ></ShoppingItem>
         ))}
       </div>

@@ -7,14 +7,6 @@ import NewShoppingItem from "./components/NewShoppingItem";
 import FilterShoppingList from "./components/FilterShoppingList";
 
 const App = () => {
-  // const nakup = [
-  //   { nazev: "máslo", mnozstvi: 1 },
-  //   { nazev: "sýr", mnozstvi: 2 },
-  //   { nazev: "banány", mnozstvi: 8 },
-  //   { nazev: "chleba", mnozstvi: 1 },
-  //   { nazev: "pivo", mnozstvi: 1 },
-  // ];
-
   const [nakup, setNakup] = useState([
     { nazev: "máslo", mnozstvi: 1 },
     { nazev: "sýr", mnozstvi: 2 },
@@ -23,6 +15,8 @@ const App = () => {
     { nazev: "pivo", mnozstvi: 1 },
   ]);
 
+  const [skrytKoupene, setSkrytKoupene] = useState(false);
+
   const handleFormSubmit = (data) => {
     // nakup.push(data); // nebude fungovat
     setNakup((prevState) => {
@@ -30,8 +24,8 @@ const App = () => {
     });
   };
 
-  const handleFilterChange = (data) => {
-    console.log(data, 'logujeme');
+  const handleFilterChange = (filterHidden) => {
+    setSkrytKoupene(filterHidden)
   };
 
   return (
@@ -41,7 +35,10 @@ const App = () => {
         <FilterShoppingList onFilterChange={handleFilterChange} />
       </header>
       <main>
-        <ShoppingList nakup={nakup}></ShoppingList>
+        <ShoppingList
+          nakup={nakup}
+          skrytKoupene={skrytKoupene}
+        />
         <div>
           <h2>Přidat položku</h2>
           <NewShoppingItem onFormSubmit={handleFormSubmit} />

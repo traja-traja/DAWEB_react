@@ -9,7 +9,7 @@ const FilterShoppingList = (props) => {
     };
 
     return (
-        <form class="filtrovani-seznamu">
+        <form className="filtrovani-seznamu">
             <label>
                 <input onChange={handleInputChanged} type="checkbox" className="filtrovani-seznamu__input" />
                 Skrýt zakoupené položky

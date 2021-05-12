@@ -8,6 +8,10 @@ const ShoppingItem = (props) => {
     setKoupeno((prevState) => !prevState);
   };
 
+  if (props.skrytKoupene) {
+    return (null);
+  }
+
   return (
     <div
       className={koupeno ? "polozka polozka--koupeno" : "polozka"}
