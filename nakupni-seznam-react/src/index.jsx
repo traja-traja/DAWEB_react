@@ -4,6 +4,7 @@ import "./style.css";
 
 import ShoppingList from "./components/ShoppingList";
 import NewShoppingItem from "./components/NewShoppingItem";
+import FilterShoppingList from "./components/FilterShoppingList";
 
 const App = () => {
   // const nakup = [
@@ -33,6 +34,7 @@ const App = () => {
     <div>
       <header>
         <h1>Nákupní seznam</h1>
+        <FilterShoppingList />
       </header>
       <main>
         <ShoppingList nakup={nakup}></ShoppingList>
