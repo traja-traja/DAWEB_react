@@ -30,11 +30,15 @@ const App = () => {
     });
   };
 
+  const handleFilterChange = (data) => {
+    console.log(data, 'logujeme');
+  };
+
   return (
     <div>
       <header>
         <h1>Nákupní seznam</h1>
-        <FilterShoppingList />
+        <FilterShoppingList onFilterChange={handleFilterChange} />
       </header>
       <main>
         <ShoppingList nakup={nakup}></ShoppingList>
