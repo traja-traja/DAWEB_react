@@ -1,0 +1,9 @@
+.seznam {
+    margin: 2rem auto;
+}
+
+.seznam__polozky {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

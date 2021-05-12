@@ -23,41 +23,6 @@ h1, h2 {
   border-bottom: 5px dotted #547EA1;
 }
 
-/* Budoucí komponenta ShoppingList */
-.seznam {
-  margin: 2rem auto;
-}
-
-.seznam__polozky {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Budoucí komponenta ShoppingItem */
-.polozka {
-  display: flex;
-  justify-content: space-between;
-  width: 30%;
-  min-width: 200px;
-  padding: 1rem 2rem;
-  border: 2px solid #547EA1;
-  border-radius: 1.2rem;
-  margin-bottom: 0.5rem;
-  background-color: #0A2236;
-  cursor: pointer;
-  box-shadow: 5px 6px 19px 3px rgba(0, 0, 0, 0.15);
-}
-
-.polozka:hover {
-  background-color: #274D6D;
-  box-shadow: 5px 6px 19px 3px rgba(0, 0, 0, 0.431);
-}
-
-.polozka__nazev {
-  font-weight: bold;
-}
-
 /* Budoucí komponenta AddShoppingItem */
 .formular {
   display: flex;
