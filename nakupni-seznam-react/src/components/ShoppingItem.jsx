@@ -8,7 +8,7 @@ const ShoppingItem = (props) => {
     setKoupeno((prevState) => !prevState);
   };
 
-  if (props.skrytKoupene) {
+  if (props.skrytKoupene && koupeno) {
     return (null);
   }
 
