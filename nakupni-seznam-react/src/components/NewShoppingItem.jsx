@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NewShoppingItem.css";
 
-const NewShoppingItem = (props) => {
+const NewShoppingItem = () => {
   const [enterredTitle, setEnterredTitle] = useState("");
   const [enterredAmount, setEnterredAmount] = useState("");
 
