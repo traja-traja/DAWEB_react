@@ -19,6 +19,8 @@ const NewShoppingItem = (props) => {
         nazev: enterredTitle,
         mnozstvi: enterredAmount
     });
+    setEnterredTitle('');
+    setEnterredAmount('');
   };
 
   return (
