@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import "./style.css";
 
 import ShoppingList from './components/ShoppingList';
+import NewShoppingItem from "./components/NewShoppingItem";
 
 const App = () => {
   const nakup = [
@@ -24,20 +25,7 @@ const App = () => {
 
         <div>
           <h2>Přidat položku</h2>
-          <form className="formular">
-            <input
-              placeholder="název položky"
-              className="formular__nazev-polozky"
-              type="text"
-            />
-            <input
-              placeholder="počet"
-              className="formular__pocet-kusu"
-              type="number"
-              min="1"
-            />
-            <button className="formular__tlacitko">Přidat</button>
-          </form>
+          <NewShoppingItem />
         </div>
       </main>
     </div>
