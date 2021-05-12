@@ -24,6 +24,7 @@ const ShoppingList = (props) => {
 
         {props.nakup.map((item) => (
           <ShoppingItem
+            key={item.nazev}
             nazev={item.nazev}
             mnozstvi={item.mnozstvi}
           ></ShoppingItem>
