@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NewShoppingItem.css";
 
-const NewShoppingItem = () => {
+const NewShoppingItem = (props) => {
   const [enterredTitle, setEnterredTitle] = useState("");
   const [enterredAmount, setEnterredAmount] = useState("");
 
@@ -15,7 +15,10 @@ const NewShoppingItem = () => {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    console.log(enterredTitle, enterredAmount);
+    props.onFormSubmit({
+        nazev: enterredTitle,
+        mnozstvi: enterredAmount
+    });
   };
 
   return (

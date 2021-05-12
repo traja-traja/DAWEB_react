@@ -14,6 +14,11 @@ const App = () => {
     { nazev: "pivo", mnozstvi: 1 },
   ];
 
+  const handleFormSubmit = (data) => {
+    console.log('Handlujeme odeslání formuláře u rodiče...');
+    console.log(data);
+  };
+
   return (
     <div>
       <header>
@@ -25,7 +30,7 @@ const App = () => {
 
         <div>
           <h2>Přidat položku</h2>
-          <NewShoppingItem />
+          <NewShoppingItem onFormSubmit={handleFormSubmit} />
         </div>
       </main>
     </div>
