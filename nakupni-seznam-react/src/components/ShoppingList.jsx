@@ -14,12 +14,6 @@ const ShoppingList = (props) => {
     props.onShoppingItemChange = function ...
     */
 
-  const handleBoughtChange = (id) => {
-    props.onBoughtChange(id);
-  };
-
-  console.log(props.skrytKoupene);
-
   const filteredNakup = props.skrytKoupene
     ? props.nakup.filter((polozka) => !polozka.koupeno)
     : [...props.nakup];
@@ -33,7 +27,7 @@ const ShoppingList = (props) => {
         nazev={item.nazev}
         mnozstvi={item.mnozstvi}
         koupeno={item.koupeno}
-        onBoughtChange={handleBoughtChange}
+        onBoughtChange={props.onBoughtChange}
       ></ShoppingItem>
     ));
   }
