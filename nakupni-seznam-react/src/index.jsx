@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
 import "./style.css";
 
-import ShoppingList from './components/ShoppingList';
+import ShoppingList from "./components/ShoppingList";
 import NewShoppingItem from "./components/NewShoppingItem";
 
 const App = () => {
-  const nakup = [
+  // const nakup = [
+  //   { nazev: "máslo", mnozstvi: 1 },
+  //   { nazev: "sýr", mnozstvi: 2 },
+  //   { nazev: "banány", mnozstvi: 8 },
+  //   { nazev: "chleba", mnozstvi: 1 },
+  //   { nazev: "pivo", mnozstvi: 1 },
+  // ];
+
+  const [nakup, setNakup] = useState([
     { nazev: "máslo", mnozstvi: 1 },
     { nazev: "sýr", mnozstvi: 2 },
     { nazev: "banány", mnozstvi: 8 },
     { nazev: "chleba", mnozstvi: 1 },
     { nazev: "pivo", mnozstvi: 1 },
-  ];
+  ]);
 
   const handleFormSubmit = (data) => {
-    console.log('Handlujeme odeslání formuláře u rodiče...');
-    console.log(data);
+    // nakup.push(data); // nebude fungovat
+    setNakup((prevState) => {
+      return prevState.concat(data); // array1.concat(array2) spojí obě pole a jako 'return' vrátí nové pole
+    });
   };
 
   return (
@@ -25,9 +35,7 @@ const App = () => {
         <h1>Nákupní seznam</h1>
       </header>
       <main>
-        
         <ShoppingList nakup={nakup}></ShoppingList>
-
         <div>
           <h2>Přidat položku</h2>
           <NewShoppingItem onFormSubmit={handleFormSubmit} />
