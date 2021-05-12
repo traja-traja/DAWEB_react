@@ -11,7 +11,12 @@ const ShoppingList = (props) => {
         .......
     ]
     props.skrytKoupene = false (true)
+    props.onShoppingItemChange = function ...
     */
+
+  const handleBoughtChange = (id) => {
+    props.onBoughtChange(id);
+  };
 
   return (
     <div className="seznam">
@@ -28,7 +33,8 @@ const ShoppingList = (props) => {
             key={item.nazev}
             nazev={item.nazev}
             mnozstvi={item.mnozstvi}
-            skrytKoupene={props.skrytKoupene}
+            koupeno={item.koupeno}
+            onBoughtChange={handleBoughtChange}
           ></ShoppingItem>
         ))}
       </div>

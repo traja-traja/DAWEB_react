@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import "./ShoppingItem.css";
 
 const ShoppingItem = (props) => {
-  const [koupeno, setKoupeno] = useState(false);
-
   const handleClick = () => {
-    setKoupeno((prevState) => !prevState);
+    props.onBoughtChange(props.nazev);
   };
 
   if (props.skrytKoupene && koupeno) {
@@ -14,7 +12,7 @@ const ShoppingItem = (props) => {
 
   return (
     <div
-      className={koupeno ? "polozka polozka--koupeno" : "polozka"}
+      className={props.koupeno ? "polozka polozka--koupeno" : "polozka"}
       onClick={handleClick}
     >
       <div className="polozka__nazev">{props.nazev}</div>
