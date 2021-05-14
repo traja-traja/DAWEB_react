@@ -6,11 +6,13 @@ const ShoppingItem = (props) => {
     props.onBoughtChange(props.nazev);
   };
 
-  const handlePlusClick = () => {
+  const handlePlusClick = (event) => {
+    event.stopPropagation();
     props.onAddItemAmount(props.nazev, 1);
   };
 
-  const handleMinusClick = () => {
+  const handleMinusClick = (event) => {
+    event.stopPropagation();
     props.onAddItemAmount(props.nazev, -1);
   };
 

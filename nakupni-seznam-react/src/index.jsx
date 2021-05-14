@@ -23,7 +23,11 @@ const App = () => {
   const handleFormSubmit = (data) => {
     // nakup.push(data); // nebude fungovat
     setNakup((prevState) => {
-      return prevState.concat(data); // array1.concat(array2) spojí obě pole a jako 'return' vrátí nové pole
+      return prevState.concat({
+        ...data,
+        mnozstvi: Number(data.mnozstvi)
+      });
+      // array1.concat(array2) spojí obě pole a jako 'return' vrátí nové pole
       // return [...prevState, data]; // druhá varianta
     });
   };
