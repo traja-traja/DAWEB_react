@@ -19,6 +19,7 @@ const App = () => {
 
   const [skrytKoupene, setSkrytKoupene] = useState(true); // defaultní stav true
 
+  // @todo handlenewItemAdded ... rename
   const handleFormSubmit = (data) => {
     // nakup.push(data); // nebude fungovat
     setNakup((prevState) => {
@@ -28,8 +29,7 @@ const App = () => {
   };
 
   const handleBoughtChange = (id) => {
-    // console.log('index.jsx')
-    // console.log(id);
+    console.log('nova polozka');
     setNakup((prevState) => {
       return (
         prevState.map(polozka => {
@@ -46,6 +46,20 @@ const App = () => {
     setSkrytKoupene(filterHidden)
   };
 
+  const handleAddItemAmount = (id, amount) => {
+    console.log('zmena mnozstvi');
+    setNakup((prevState) => {
+      return (
+        prevState.map(polozka => {
+          if (id === polozka.nazev) {
+            polozka.mnozstvi += amount;
+          }
+          return polozka;
+        })
+      );
+    });
+  };
+
   return (
     <div>
       <header>
@@ -60,6 +74,7 @@ const App = () => {
           nakup={nakup}
           skrytKoupene={skrytKoupene}
           onBoughtChange={handleBoughtChange}
+          onAddItemAmount={handleAddItemAmount}
         />
         <div>
           <h2>Přidat položku</h2>

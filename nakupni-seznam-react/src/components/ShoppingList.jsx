@@ -28,6 +28,7 @@ const ShoppingList = (props) => {
         mnozstvi={item.mnozstvi}
         koupeno={item.koupeno}
         onBoughtChange={props.onBoughtChange}
+        onAddItemAmount={props.onAddItemAmount}
       ></ShoppingItem>
     ));
   }

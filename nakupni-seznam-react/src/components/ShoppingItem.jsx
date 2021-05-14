@@ -6,13 +6,23 @@ const ShoppingItem = (props) => {
     props.onBoughtChange(props.nazev);
   };
 
+  const handlePlusClick = () => {
+    props.onAddItemAmount(props.nazev, 1);
+  };
+
+  const handleMinusClick = () => {
+    props.onAddItemAmount(props.nazev, -1);
+  };
+
   return (
     <div
       className={props.koupeno ? "polozka polozka--koupeno" : "polozka"}
       onClick={handleClick}
     >
       <div className="polozka__nazev">{props.nazev}</div>
+      <button className="polozka__button" onClick={handlePlusClick}>+</button>
       <div className="polozka__mnozstvi">{props.mnozstvi} ks</div>
+      <button className="polozka__button" onClick={handleMinusClick}>-</button>
     </div>
   );
 };

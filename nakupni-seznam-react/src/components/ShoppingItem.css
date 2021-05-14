@@ -30,4 +30,27 @@
   
   .polozka__nazev {
     font-weight: bold;
+    flex-grow: 2;
+  }
+
+  .polozka__button {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-top: -10px;
+    position: relative;
+    top: 7px;
+    padding: 0;
+    text-align: center;
+    background-color: white;
+    border-style: none;
+    cursor: pointer;
+  }
+  .polozka__button:first-of-type {
+    margin-right: 5px;
+  }
+
+  .polozka__button:last-of-type {
+    margin-left: 10px;
   }
