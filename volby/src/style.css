@@ -44,7 +44,13 @@ h2 {
 }
 
 .candidate-list {
-  text-align: center;
+  display: flex;
+  width: 50%; /* added */
+  margin: 0 auto; /* added */
+}
+
+.candidate-list > * {
+  width: 25%;
 }
 
 /* Budoucí komponenta Candidate */
