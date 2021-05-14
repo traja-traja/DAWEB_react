@@ -4,8 +4,12 @@ import './style.css';
 import './index.html';
 
 const MenuItem = (props) => {
+  const handleClick = () => {
+    props.onSelect(props.text);
+  };
+  
   return (
-    <a href="#" className="menu-item" onClick={props.onSelect}>
+    <a href="#" className="menu-item" onClick={handleClick}>
       {props.text}
     </a>
   );
@@ -13,12 +17,14 @@ const MenuItem = (props) => {
 
 const App = () => {
   const [menuOpened, setMenuOpened] = useState(false);
+  const [pageTitle, setPageTitle] = useState('Domů');
   
   const handleMenuClick = () => {
     setMenuOpened((prevState) => !prevState);
   };
 
-  const handleSelectItem = () => {
+  const handleSelectItem = (text) => {
+    setPageTitle(text);
     setMenuOpened(false);
   }
 
@@ -37,7 +43,7 @@ const App = () => {
         </div>
       </header>
       <main>
-        <h1>Domů</h1>
+        <h1>{pageTitle}</h1>
       </main>
     </>
   );
