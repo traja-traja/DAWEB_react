@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 import './style.css';
 import './index.html';
@@ -12,11 +12,17 @@ const MenuItem = (props) => {
 };
 
 const App = () => {
+  const [menuOpened, setMenuOpened] = useState(false);
+  
+  const handleMenuClick = () => {
+    setMenuOpened((prevState) => !prevState);
+  };
+
   return (
     <>
       <header>
-        <div className="menu">
-          <button className="menu__btn"></button>
+        <div className={`menu ${menuOpened ? '' : 'menu--closed'}`}>
+          <button className="menu__btn" onClick={handleMenuClick}></button>
           <div className="menu__items">
             <MenuItem text="Domů" />
             <MenuItem text="Naše nabídka" />
