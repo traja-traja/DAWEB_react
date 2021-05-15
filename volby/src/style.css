@@ -84,3 +84,8 @@ h2 {
   background-color: #00b3a1;
   transform: scale(1.1);
 }
+
+.custom-candidate {
+  margin-top: 2rem;
+  text-align: center;
+}

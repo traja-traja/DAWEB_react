@@ -1,8 +1,18 @@
-import React from 'react';
-import { render } from 'react-dom';
-import './style.css';
+import React, { useState } from "react";
+import { render } from "react-dom";
+import "./style.css";
 
-const App = () => {  
+import { Candidate } from "./components/Candidate";
+
+const App = () => {
+  const handleVote = (jmeno) => {
+    console.log("rodič - zahlasováno pro: " + jmeno);
+    setVoted(true);
+  };
+
+  const [voted, setVoted] = useState(false);
+  const [hlasovano, setHlasovano] = useState(false);
+
   return (
     <>
       <header>
@@ -10,15 +20,45 @@ const App = () => {
       </header>
       <main>
         <h2>Kandidáti</h2>
+
+        {voted ? "Zahlasováno" : "Hlasuj v prezidentské volbě"}
+
         <div className="candidate-list">
-          <button>Ferdinand Mravenec</button>
-          <button>Markéta Smetana</button>
-          <button>Beáta Skočdopolová</button>
-          <button>Lubomír Poňuchálek</button>
+
+          <Candidate
+            onVote={handleVote}
+            zahlasovano={voted}
+            jmeno="Pampeliška Jahodová"
+          ></Candidate>
+          <Candidate
+            onVote={handleVote}
+            zahlasovano={voted}
+            jmeno="Sněhurka"
+          ></Candidate>
+          <Candidate
+            onVote={handleVote}
+            zahlasovano={voted}
+            jmeno="Aleš Růžička"
+          ></Candidate>
+          <Candidate
+            onVote={handleVote}
+            zahlasovano={voted}
+            jmeno="Standa Kosáček"
+          ></Candidate>
+        </div>
+
+        <div className="custom-candidate">
+          <form>
+            <label>
+              Zvol si svého kandidáta:
+              <input />
+            </label>
+            <button type="submit">Hlasuj</button>
+          </form>
         </div>
       </main>
     </>
   );
 };
 
-render(<App />, document.querySelector('#app'));
+render(<App />, document.querySelector("#app"));
