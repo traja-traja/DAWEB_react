@@ -1,3 +1,7 @@
+.main-nav {
+    margin-bottom: 3rem;
+}
+
 .main-nav > ul {
   display: flex;
 }

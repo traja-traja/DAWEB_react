@@ -10,7 +10,7 @@ const App = () => (
       <MainNav></MainNav>
     </header>
     <main>
-      Kontejner domů
+      <p>Kontejner domů</p>
     </main>
   </div>
 );
