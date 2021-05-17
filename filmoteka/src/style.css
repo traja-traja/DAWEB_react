@@ -17,10 +17,3 @@ html {
 header {
   text-align: center;
 }
-
-.main-nav > ul {
-  display: flex;
-}
-.main-nav > ul > li {
-  width: 33%;
-}
