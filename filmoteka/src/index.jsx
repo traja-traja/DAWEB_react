@@ -7,7 +7,7 @@ const App = () => (
   <div className="container">
     <header>
       <h1>Filmotéka</h1>
-      <MainNav></MainNav>
+      <MainNav />
     </header>
     <main>
       <p>Kontejner domů</p>
